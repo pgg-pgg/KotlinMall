@@ -29,6 +29,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':Provider')
     implementation project(':MessageCenter')
+    implementation project(':GoodsCenter')
+    implementation project(':OrderCenter')
     if (isUserModule.toBoolean()){
         implementation project(':UserCenter')
     }

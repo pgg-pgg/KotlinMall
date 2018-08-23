@@ -5,6 +5,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.baselibrary.R
 import com.example.baselibrary.ext.onClick
@@ -50,7 +51,21 @@ class HeadBar @JvmOverloads constructor(
         }
     }
 
+    /*
+      获取左侧视图
+   */
+    fun getLeftView(): ImageView {
+        return mLeftIv
+    }
+
     fun getRightView(): TextView {
         return mRightTv
+    }
+
+    /*
+       获取右侧文字
+    */
+    fun getRightText():String{
+        return mRightTv.text.toString()
     }
 }

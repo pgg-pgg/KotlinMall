@@ -2,9 +2,11 @@ package com.example.usercenter.ui.activity
 
 import android.os.Bundle
 import android.view.View
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.baselibrary.ext.enable
 import com.example.baselibrary.ext.onClick
 import com.example.baselibrary.ui.activity.BaseMvpActivity
+import com.example.provider.router.RouterPath
 import com.example.usercenter.R
 import com.example.usercenter.data.protocol.UserInfo
 import com.example.usercenter.injection.component.DaggerUserComponent
@@ -19,6 +21,7 @@ import org.jetbrains.anko.toast
  * Created by pengganggui on 2018/8/21.
  * 登录界面
  */
+@Route(path=RouterPath.UserCenter.PATH_LOGIN)
 class LoginActivity :BaseMvpActivity<LoginPresenter>(),LoginView,View.OnClickListener {
 
 
@@ -39,7 +42,8 @@ class LoginActivity :BaseMvpActivity<LoginPresenter>(),LoginView,View.OnClickLis
 
     override fun onLoginResult(result: UserInfo) {
         toast("登录成功")
-        startActivity<UserInfoActivity>()
+//        startActivity<UserInfoActivity>()
+        finish()
     }
 
     override fun onClick(p0: View) {

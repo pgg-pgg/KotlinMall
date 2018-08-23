@@ -1,6 +1,9 @@
 package com.example.baselibrary.ui.fragment
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import com.example.baselibrary.common.BaseApplication
 import com.example.baselibrary.injection.component.ActivityComponent
 import com.example.baselibrary.injection.component.DaggerActivityComponent
@@ -14,7 +17,7 @@ import javax.inject.Inject
 /**
  * Created by pengganggui on 2018/8/14.
  */
-open abstract class BaseMvpFragment<T:BasePresenter<*>> :BaseFragment(),BaseView {
+abstract class BaseMvpFragment<T:BasePresenter<*>> :BaseFragment(),BaseView {
 
 
     override fun showLoading() {
@@ -33,11 +36,11 @@ open abstract class BaseMvpFragment<T:BasePresenter<*>> :BaseFragment(),BaseView
     lateinit var mPresenter:T
 
     lateinit var activityComponent: ActivityComponent
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        injectComponent()
-        initActivityInjection()
 
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        initActivityInjection()
+        injectComponent()
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     abstract fun injectComponent()

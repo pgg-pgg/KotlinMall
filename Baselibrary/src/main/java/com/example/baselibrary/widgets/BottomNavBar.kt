@@ -38,7 +38,6 @@ class BottomNavBar @JvmOverloads constructor(
 
         mCartBadge= TextBadgeItem()
         cartItem.setBadgeItem(mCartBadge)
-        mCartBadge.setText("10")
 
         //消息底部item
         val messageItem = BottomNavigationItem(R.drawable.btn_nav_msg_press, resources.getString(R.string.nav_bar_msg))
@@ -48,7 +47,6 @@ class BottomNavBar @JvmOverloads constructor(
 
         mMsgBadge= ShapeBadgeItem()
         mMsgBadge.setShape(ShapeBadgeItem.SHAPE_OVAL)
-        messageItem.setBadgeItem(mMsgBadge)
 
         //我的底部item
         val userItem = BottomNavigationItem(R.drawable.btn_nav_user_press, resources.getString(R.string.nav_bar_user))
