@@ -13,7 +13,21 @@ object RouterPath{
 
     class OrderCenter{
         companion object {
-            const val PATH_ORDER_CONFIRM="orderCenter/confirms"
+            const val PATH_ORDER_CONFIRM="/orderCenter/confirms"
+        }
+    }
+
+    class PaySdk{
+        companion object {
+            const val PATH_PAY="/paysdk/pay"
+        }
+    }
+
+    //消息模块
+    class MessageCenter{
+        companion object {
+            const val PATH_MESSAGE_PUSH = "/messageCenter/push"
+            const val PATH_MESSAGE_ORDER = "/messageCenter/order"
         }
     }
 

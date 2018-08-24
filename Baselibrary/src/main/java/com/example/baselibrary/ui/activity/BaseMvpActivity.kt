@@ -1,6 +1,7 @@
 package com.example.baselibrary.ui.activity
 
 import android.os.Bundle
+import com.alibaba.android.arouter.launcher.ARouter
 import com.example.baselibrary.common.BaseApplication
 import com.example.baselibrary.injection.component.ActivityComponent
 import com.example.baselibrary.injection.component.DaggerActivityComponent
@@ -42,6 +43,7 @@ open abstract class BaseMvpActivity<T:BasePresenter<*>> :BaseActivity(),BaseView
         initActivityInjection()
         injectComponent()
         mProgressLoading=ProgressLoading.create(this)
+        ARouter.getInstance().inject(this)
     }
 
     abstract fun injectComponent()

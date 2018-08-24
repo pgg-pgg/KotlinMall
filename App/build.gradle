@@ -31,6 +31,7 @@ dependencies {
     implementation project(':MessageCenter')
     implementation project(':GoodsCenter')
     implementation project(':OrderCenter')
+    implementation project(':PaySDK')
     if (isUserModule.toBoolean()){
         implementation project(':UserCenter')
     }
